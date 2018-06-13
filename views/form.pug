@@ -1,0 +1,26 @@
+html 
+	head
+
+	body
+		if (errors)
+			each val in errors
+				p(style={color: 'red'}) #{val.msg}
+		form(method='POST')
+			div 
+				label Username: 
+				input(type='text' name='username')
+			div
+				label Password:
+				input(type='password' name='password')
+			p
+			select(name='gender') 
+				option(value='male') Male
+				option(value='female') Female
+				option(value='other') Other
+			div
+				label Agree receiving Porsche Panamera as a gift:
+				input(type='checkbox' name='agree')
+			p
+			button(type='submit') Submit
+
+				
