@@ -103,20 +103,3 @@ process.on('unhandledRejection', (err) => {
 
 init();
 
-/*server.route({
-    method: 'GET',
-    path: '/{user*2}',
-    handler: (request, h) => {
-        const userParts = request.params.user.split('/');
-        return 'Hello, ' + encodeURIComponent(userParts[0]) + ' ' + encodeURIComponent(userParts[1]) + '!';
-    }
-});*/
-
-/*server.route({
-    method: 'GET',
-    path: '/hello/{user}',
-    handler: (request, h) => {
-        const user = request.params.user ? encodeURIComponent(request.params.user) : 'ancanot';
-        return `Hello ${user}`;
-    }
-});*/
