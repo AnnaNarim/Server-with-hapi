@@ -12,7 +12,13 @@
     "hapi": "^17.5.1",
     "inert": "^5.1.0",
     "moment": "^2.22.2",
+    "node-fetch": "^2.1.2",
     "pug": "^2.0.3",
     "vision": "^5.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.12.0"
   }
 }
