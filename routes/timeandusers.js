@@ -6,38 +6,56 @@ module.exports = routes;
 
 routes.push({
 	method: 'GET',
-    path: '/',
-	handler: Handlers.helloWorld
+    path: '/hello',
+	handler: Handlers.helloWorld,
+	config: {
+		tags: ['api']
+	}
 });
 
 routes.push({
     method: 'GET',
     path: '/time',
-    handler: Handlers.time
+    handler: Handlers.time,
+    config: {
+		tags: ['api']
+	}
 });
 
 routes.push({
     method:'GET',
     path: '/form',
-    handler: Handlers.renderForm
+    handler: Handlers.renderForm,
+    config: {
+		tags: ['api']
+	}
 });
 
 routes.push({
     method: 'POST',
     path:'/form',
     handler: Handlers.postForm,
+    config: {
+		tags: ['api']
+	}
 });
 
 routes.push({
     method: 'GET',
     path: '/result',
-    handler: Handlers.result
+    handler: Handlers.result,
+    config: {
+		tags: ['api']
+	}
 });
 
 routes.push({
     method: 'GET', 
     path: '/api/time',
-    handler: Handlers.apiTime
+    handler: Handlers.apiTime,
+    config: {
+		tags: ['api']
+	}
 });
 
 routes.push({
@@ -52,12 +70,17 @@ routes.push({
     			gender: Joi.any().valid("Male", "Female", "Other").required(),
     			agree: Joi.any().valid(true,false).required()
     		}
-    	}
+    	},
+
+		tags: ['api']
     }
 });
 
 routes.push({
     method: 'GET',
     path: '/api/users',
-    handler: Handlers.renderApiUsers
+    handler: Handlers.renderApiUsers,
+    config: {
+		tags: ['api']
+	}
 });

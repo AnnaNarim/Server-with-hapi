@@ -1,18 +1,34 @@
-'use strict';
-
 const Hapi = require('hapi');
+const Inert = require('inert');
 const Vision = require('vision');
 const Pug = require('pug');
+const HapiSwagger = require('hapi-swagger');
 const routes = require('./routes/timeandusers.js');
-
+const Pack = require('./package.json');
+const swaggerOptions = { 
+    info: {
+        'title' : Pack.name,
+        'version': Pack.version
+    },
+    documentationPath: '/',
+    jsonEditor: true,
+    schemes : [ 'http', 'https']
+};
 const server = Hapi.server({
     port: 3000,
     host: 'localhost'
 });
 
 const init = async () => {
-    await server.register(require('inert'));
-    await server.register(require('vision'));
+    await server.register([
+            Inert, 
+            Vision, 
+            {
+                plugin: HapiSwagger,
+                options:swaggerOptions,
+            },
+        ]);
+    //await server.register(require('vision'));
     
     server.views({
         engines: { pug: Pug },
